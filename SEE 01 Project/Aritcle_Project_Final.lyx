@@ -1,0 +1,3376 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage{titling}
+\fancyhf{}               % Clear fancy header/footer
+\fancyhead[L]{Presidency University}   % My name in Left footer
+\fancyhead[R]{Instructor: AKG}
+\fancyfoot[C]{\thepage}  % Page number in Right footer
+\fancyfoot[R]{Spandan Ghoshal}
+
+\makeatletter
+\let\ps@plain\ps@fancy   % Plain page style = fancy page style
+\makeatother
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-ams-bytype
+theorems-ams-extended-chap-bytype
+theorems-ams-extended-bytype
+theorems-chap-bytype
+subequations
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "lmodern" "default"
+\font_sans "lmss" "default"
+\font_typewriter "lmtt" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref section
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 0
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1.5cm
+\topmargin 1.5cm
+\rightmargin 1.5cm
+\bottommargin 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Presidency University
+\begin_inset Newline newline
+\end_inset
+
+STAT03SEE 
+\begin_inset Newline newline
+\end_inset
+
+DATA ANALYSIS PROJECT
+\end_layout
+
+\begin_layout Author
+Spandan Ghoshal
+\begin_inset Newline newline
+\end_inset
+
+Reg.No :- 18214110001
+\begin_inset Newline newline
+\end_inset
+
+Roll.No :- 18214001
+\end_layout
+
+\begin_layout Section*
+Introduction
+\end_layout
+
+\begin_layout Standard
+Young generation of today are exposed to the risk of being victims of HIV/AIDS
+ - which was quite unknown to their predecessors a few decades ago.
+ The epidemic of HIV/AIDS is now progressing at a rapid pace among young
+ people.
+ Studies have reported that young people form a significant segment of those
+ attending sexually transmitted infection (STI) clinics and those infected
+ by HIV.
+ 
+\end_layout
+
+\begin_layout Standard
+Programme managers and policy makers have often recommended that schools
+ and colleges can act at the center point for disseminating information
+ and education on HIV/AIDS.
+ Hence any materials prepared to enhance awareness constitute a potent weapon
+ in the hands of public health personnel.
+ In the following study a group of students are taken an examination signifying
+ their awareness regarding HIV/AIDS, before and after the awareness programme.
+ Here we are interested to examine any notable diffference in POST-SCORE
+ in comparison with PRE-SCORE.Also we are interested to check the effect
+ of different groups on the SCOREs.
+ Hence our hypothesis for the statistical study will be :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mathscr{H}_{o} & :\mu_{\text{Post}}=\mu_{\text{Pre}}\\
+\mathscr{H}_{1} & :\mu_{\text{Post}}>\mu_{\text{Pre}}
+\end{align*}
+
+\end_inset
+
+Since the given data has PRE.TEST and POST.TEST scores for 5 disciplines :
+ 
+\end_layout
+
+\begin_layout Itemize
+Chemistry (Special)
+\end_layout
+
+\begin_layout Itemize
+Botany (Special)
+\end_layout
+
+\begin_layout Itemize
+Microbiology (SYBSc level)
+\end_layout
+
+\begin_layout Itemize
+Microbiology (Special level)
+\end_layout
+
+\begin_layout Itemize
+Zoology (Special)
+\end_layout
+
+\begin_layout Standard
+Hence for different groups, we can write :-
+\begin_inset Formula 
+\begin{align*}
+\mathscr{H}_{o}: & \text{ means of different groups are equal}\\
+\mathscr{H}_{1}: & \text{ at least one of them is unequal}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Exploratory Data Analysis
+\end_layout
+
+\begin_layout Standard
+The mean value of PRE.TEST scores is :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+A <- read.table("C:
+\backslash
+
+\backslash
+Users
+\backslash
+
+\backslash
+Sukanta
+\backslash
+
+\backslash
+Desktop
+\backslash
+
+\backslash
+SEE_Project
+\backslash
+
+\backslash
+AIDS_final.dat", header = T , sep = "
+\backslash
+t") 
+\end_layout
+
+\begin_layout Plain Layout
+
+mean(A$PRE.TEST) 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The mean value of POST.TEST scores is :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+mean(A$POST.TEST) 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Observation:- Hence there is a clear difference in the two mean values which
+ furthur supports our initial hypothesis.
+\end_layout
+
+\begin_layout Standard
+The mean values of PRE.TEST and POST.TEST scores for different subjects :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+name <- unique(A$Subjects) 
+\end_layout
+
+\begin_layout Plain Layout
+
+means <- matrix(rep(0,length(name)*2),ncol = 2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:length(name)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+{   
+\end_layout
+
+\begin_layout Plain Layout
+
+	means[i,1] <- mean(subset(A , Subjects %in% name[i])$PRE.TEST)   
+\end_layout
+
+\begin_layout Plain Layout
+
+	means[i,2] <- mean(subset(A , Subjects %in% name[i])$POST.TEST) 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+groups <- data.frame(name , means , means[,2]-means[,1])
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(groups) <- c("Subjects","PRE_mean","POST_mean","Diff") 
+\end_layout
+
+\begin_layout Plain Layout
+
+groups 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Observation:- Even for different Subjects, the POST.TEST socres are quite
+ higher than PRE.TEST scores though the difference varies from subject to
+ subject.
+\end_layout
+
+\begin_layout Standard
+Variance of PRE.TEST and POST.TEST scores for different subjects :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA>>= 
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+var_s <- matrix(rep(0,length(name)*2),ncol = 2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:length(name)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+{   
+\end_layout
+
+\begin_layout Plain Layout
+
+	var_s[i,1] <- var(subset(A , Subjects %in% name[i])$PRE.TEST)  
+\end_layout
+
+\begin_layout Plain Layout
+
+	var_s[i,2] <- var(subset(A , Subjects %in% name[i])$POST.TEST) 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+groups_var <- data.frame(name , var_s) 
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(groups_var) <- c("Subjects","PRE_var","POST_var")
+\end_layout
+
+\begin_layout Plain Layout
+
+groups_var 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Observation:- For different Subjects, variances of POST.TEST socres are quite
+ small for PRE.TEST scores which might be the indication for increase in
+ consistency of the students as a result of the awareness programme.
+\end_layout
+
+\begin_layout Standard
+The Scatterplot for both the Scores for all the subjects and subjectwise
+ :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,fig=T,fig.height=5,fig.width=8,warning=F,message=F>>=
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+library(ggplot2)
+\end_layout
+
+\begin_layout Plain Layout
+
+library(ggpubr)
+\end_layout
+
+\begin_layout Plain Layout
+
+library(magrittr)
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(A ,aes(PRE.TEST,POST.TEST, color = Subjects)) +geom_point() + facet_wrap(~S
+ubjects) + scale_color_grey(start=0.2,end=0.6) + theme_bw()     
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Scatterplot of Pre and Post test Scores
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Observation:- Hence there is a slight dependence between PRE.TEST and POST.TEST
+ scores as we can verify from the correlation between them :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+cor(A$PRE.TEST,A$POST.TEST)  
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Subject wise correlations :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+corr_s <- matrix(rep(0,length(name)),ncol = 1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:length(name))
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+corr_s[i,1] <- cor(subset(A , Subjects %in% name[i])$PRE.TEST,subset(A ,
+ Subjects %in% name[i])$POST.TEST)
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+groups_corr <- data.frame(name , corr_s) 
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(groups_corr) <- c("Subjects","Correlation") 
+\end_layout
+
+\begin_layout Plain Layout
+
+groups_corr
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Observation:- The change of correlation for different groups is a very interesti
+ng observation.
+\end_layout
+
+\begin_layout Standard
+Now we make boxplot and jittered plots of both scores to see the difference
+ between their mean and variablity.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,fig=T,fig.height=6,fig.width=8,warning=F,message=F>>=
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+A1 <- A[-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+A2 <- A[-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(A1)[4] <- "Score" 
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(A2)[4] <- "Score" 
+\end_layout
+
+\begin_layout Plain Layout
+
+AIDS1 <- rbind(A1,A2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+Indicator <- c(rep("PRE",72),rep("POST",72))
+\end_layout
+
+\begin_layout Plain Layout
+
+AIDS <- cbind(AIDS1,Indicator) 
+\end_layout
+
+\begin_layout Plain Layout
+
+AIDS$Indicator <- factor(AIDS$Indicator , levels = c("PRE","POST"))
+\end_layout
+
+\begin_layout Plain Layout
+
+AIDS$Subjects <- factor(AIDS$Subjects , levels = c("Chemistry","Botany","Micro_B
+sc","Micro SP","Zoology"))
+\end_layout
+
+\begin_layout Plain Layout
+
+plot1 <- ggboxplot(AIDS , x = "Indicator" , y = "Score" , fill = 
+\begin_inset Quotes eld
+\end_inset
+
+Indicator
+\begin_inset Quotes erd
+\end_inset
+
+) + theme_bw() + scale_fill_grey()
+\end_layout
+
+\begin_layout Plain Layout
+
+plot2 <- ggline(AIDS, x = "Indicator", y = "Score" , add = c("mean_se","jitter")
+ , color = 
+\begin_inset Quotes eld
+\end_inset
+
+Indicator
+\begin_inset Quotes erd
+\end_inset
+
+) + scale_color_grey(start = 0.2 , end = 0.6) + theme_bw() 
+\end_layout
+
+\begin_layout Plain Layout
+
+ggarrange(plot1 , plot2 , ncol = 2 , nrow = 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Boxplot of Scores and Jittered Plots of Scores(with standard errors)
+\begin_inset CommandInset label
+LatexCommand label
+name "F"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Observation:- Though PRE.TEST scores has less mean than POST.TEST scores,
+ but also has higher variance in comparison.
+\end_layout
+
+\begin_layout Standard
+Subjectwise boxplots for the two scores :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,fig=T,fig.height=4,fig.width=8,warning=F,message=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+ggboxplot(AIDS , x = "Subjects", y = "Score", fill = 
+\begin_inset Quotes eld
+\end_inset
+
+Indicator
+\begin_inset Quotes erd
+\end_inset
+
+) + theme_bw() + scale_fill_grey()
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Subjectwise Boxplots
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Subjectwise jittered plots for the two scores :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,fig=T,fig.height=4,fig.width=8,warning=F,message=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+ggline(AIDS, x = "Subjects", y = "Score", color = 
+\begin_inset Quotes eld
+\end_inset
+
+Indicator
+\begin_inset Quotes erd
+\end_inset
+
+, add =
+\end_layout
+
+\begin_layout Plain Layout
+
+c("mean_se","jitter")) + theme_bw()+ scale_color_grey(start = 0.2 , end =
+ 0.6) 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Subjectwise Jittered Plots
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For visualizing densityplots of marks we make Ridgeline Plots :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,fig=T,fig.height=4,fig.width=8,warning=F,message=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+library(ggridges)
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(AIDS, aes(x = Score, y = Indicator, fill = Indicator)) +     geom_density
+_ridges() +     theme_ridges() +      theme(legend.position = "none") + scale_fil
+l_grey(start = 0.2 , end = 0.7)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ridgeline Plots for both tests
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For visualizing densityplots of subjectwise marks we make Ridgeline Plots
+ :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,fig=T,fig.height=4,fig.width=8,warning=F,message=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+library(ggridges)
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(AIDS, aes(x = Score, y = Subjects, fill = Subjects)) +   geom_density_rid
+ges() +   theme_ridges() +    theme(legend.position = "none") +   facet_wrap(~Ind
+icator) +   scale_fill_grey(start = 0.2, end = 0.7)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Subjectwise Ridgeline Plots
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Observation :-
+\end_layout
+
+\begin_layout Standard
+From several statistical measures and data vizualization techniques, applied
+ on the given data, it can be suspected that the awareness programme had
+ a major impact on the test scores of the students.
+ Also their respective discplines may have an impact on their performance.
+ The significance of these claims are verified in the next part of this
+ report using conformatory analysis tools.
+\end_layout
+
+\begin_layout Subsection*
+Normality Test :-
+\end_layout
+
+\begin_layout Standard
+To check whether both the scores follow normal distribution, we make their
+ respective qqplots and also the qqplot for the difference in the scores.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,fig=T,fig.height=4,fig.width=8,warning=F,message=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+diff <- A$POST.TEST-A$PRE.TEST 
+\end_layout
+
+\begin_layout Plain Layout
+
+AI <- data.frame(A[,-c(4,5)] , diff) 
+\end_layout
+
+\begin_layout Plain Layout
+
+qq <- ggplot(AIDS , aes(sample = Score)) +   stat_qq() + stat_qq_line()
+ + facet_wrap(~Indicator) + theme_bw()
+\end_layout
+
+\begin_layout Plain Layout
+
+hg <- ggplot(AIDS , aes(Score)) +   geom_histogram(aes(y=..density..)) + facet_wrap(
+~Indicator) + theme_bw()
+\end_layout
+
+\begin_layout Plain Layout
+
+ggarrange(qq , hg , ncol = 1 , nrow = 2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+qqplot and histogram for both Scores
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ As the quantiles fall alongside the reference line, hence our assumption
+ of normality may be assumed true.
+\end_layout
+
+\begin_layout Section*
+Inferential Data Analysis 
+\end_layout
+
+\begin_layout Subsection*
+Model
+\end_layout
+
+\begin_layout Standard
+Since there are 72 students and the data consists of the PRE.TEST and POST.TEST
+ scores of the same individual and from the QQplots in the previous section,
+ we can assume both the scores jointly follow a Bivariate Normal Distribution
+ with unknown parameters.
+ Let 
+\begin_inset Formula $X:\text{PRE.TEST scores},Y:\text{POST.TEST scores}$
+\end_inset
+
+ then, our model is :-
+\begin_inset Formula 
+\[
+\begin{pmatrix}X\\
+Y
+\end{pmatrix}\sim BN\left(\mu_{X},\mu_{Y},\sigma_{X}^{2},\sigma_{Y}^{2},\rho\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Test of Hypothesis 
+\end_layout
+
+\begin_layout Standard
+From the exploratory data analysis, we did in the previous segment, we hypothesi
+ze some facts about the given sample data and check their significance using
+ inferential tools.
+\end_layout
+
+\begin_layout Standard
+From figure 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "F"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we can observe that PRE.TEST scores had greater variance, compared to POST.TEST
+ scores.
+ Hence, we set the following hypothesis :-
+\begin_inset Formula 
+\begin{align*}
+\mathscr{H}_{o}: & \frac{\sigma_{X}^{2}}{\sigma_{Y}^{2}}=1\\
+\mathscr{H}_{1}: & \frac{\sigma_{X}^{2}}{\sigma_{Y}^{2}}>1
+\end{align*}
+
+\end_inset
+
+ Using R we test our hypothesis :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,warning=F,message=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+vtest1 = var.test(A$PRE.TEST , A$POST.TEST , ratio = 1 , alternative = "greater"
+ , paired = T)
+\end_layout
+
+\begin_layout Plain Layout
+
+vtest1
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Since the p-value for the Test :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,warning=F,message=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+vtest1$p.value
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+is very less than 
+\begin_inset Formula $\alpha=0.05$
+\end_inset
+
+ , we can easily reject our 
+\begin_inset Formula $\mathscr{H}_{o}$
+\end_inset
+
+ with level of significance 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+ Hence POST.TEST scores has a significantly lower variance than PRE.TEST scores.
+\end_layout
+
+\begin_layout Standard
+From figure 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "F"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we can also note a difference in the means of PRE.TEST and POST.TEST scores.
+ Hence we now hypothesize the following :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mathscr{H}_{o}: & \mu_{Y}=\mu_{X}\\
+\mathscr{H}_{1}: & \mu_{Y}>\mu_{X}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then the above is a paired t-test :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,warning=F,message=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+options(width=60)
+\end_layout
+
+\begin_layout Plain Layout
+
+ttest1 = t.test(A$POST.TEST , A$PRE.TEST , alternative = "greater" , paired
+ = T)
+\end_layout
+
+\begin_layout Plain Layout
+
+ttest1
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this case also the p-value is :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,warning=F,message=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+ttest1$p.value
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+very less than 
+\begin_inset Formula $\alpha=0.05$
+\end_inset
+
+ hence our suspect was right and we can reject the null hypothesis.
+ Hence mean POST.TEST score is significantly higher than mean PRE.TEST score.
+ 
+\end_layout
+
+\begin_layout Standard
+To check if the mean values are significantly higher for each group or not,
+ we perform Subjectwise t-test for unequal variance :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,warning=F,message=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val <- matrix(rep(0,length(name)),ncol = 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:length(name)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+{  
+\end_layout
+
+\begin_layout Plain Layout
+
+test = t.test(subset(A , Subjects %in% name[i])$POST.TEST , subset(A , Subjects
+ %in% name[i])$PRE.TEST , alternative = "greater" , paired =T) 
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val[i,1] <- test$p.value
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val <- data.frame(name , p_val) 
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(p_val) <- c("Subjects","p-values") 
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As we can clearly see that for each group the p-values are very less than
+ 
+\begin_inset Formula $\alpha=0.05$
+\end_inset
+
+ hence we can reject the null hypothesis that the values of mean are significant
+ly equal hence we can state on the light of the given data that the mean
+ POST.TEST scores are significantly higher than the mean PRE.TEST scores for
+ each subject.
+ 
+\end_layout
+
+\begin_layout Standard
+To check homoskedasticity for different groups we apply F-test for each
+ subjects :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,warning=F,message=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val <- matrix(rep(0,length(name)),ncol = 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:length(name)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+{  
+\end_layout
+
+\begin_layout Plain Layout
+
+test = var.test(subset(A , Subjects %in% name[i])$POST.TEST , subset(A , Subjects
+ %in% name[i])$PRE.TEST ,alternative = "less",conf.level = 0.99) 
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val[i,1] <- test$p.value
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val <- data.frame(name , p_val) 
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(p_val) <- c("Subjects","p-values") 
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since for most of the Subjects the p-values are very less than 
+\begin_inset Formula $\alpha=0.05$
+\end_inset
+
+ hence we reject the null hypothesis that the Scores are Homoskedasticity
+ across different subjects.
+ We also an readily state that the score variances are significantly reduced
+ for most of the subjects.
+\end_layout
+
+\begin_layout Standard
+For measuring subjectwise mean score differences (mean of the differences
+ between PRE.TEST and POST.TEST scores) , we can use pairwise t-test for unequal
+ variance.
+ The p-values for all the subject combinations are given below :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,warning=F,message=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+pair.test <- pairwise.t.test(AI$diff, AI$Subjects , pool.sd = FALSE)
+\end_layout
+
+\begin_layout Plain Layout
+
+pair.test$p.value  
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+from the matrix we can say that among students of Microbiology , students
+ persuing Bsc degree did much improvement in the tests compared to students
+ with Specialization in Microbiology where as they had less mean PRE.TEST
+ scores than the later.
+ Whereas Students from Chemistry and Botany did more or less same improvement.
+\end_layout
+
+\begin_layout Standard
+For much stronger conclusions, we perform Non-Parametric tests (Since they
+ make no Parametric Assumptions) to check if the differences are uniform
+ across Subjects and Years or not.
+ We perform Wilcoxon signed rank test :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,warning=F,message=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+rank.test <- wilcox.test(A$POST.TEST , A$PRE.TEST , paired = T , alternative
+ = "greater") 
+\end_layout
+
+\begin_layout Plain Layout
+
+rank.test   
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+And even from this test, we can claim that there is a significant difference
+ in the PRE.TEST and POST.TEST scores.
+ ( The p-value being very small from 
+\begin_inset Formula $\alpha=0.05$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+The p-values of the Wilcoxon Signed Rank Test for individual subjects are
+ :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<echo=F,comment=NA,warning=F,message=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val <- vector(length = length(name))
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:length(name)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+{  
+\end_layout
+
+\begin_layout Plain Layout
+
+A_sub = subset(A , Subjects %in% name[i])   
+\end_layout
+
+\begin_layout Plain Layout
+
+rank.test1 = wilcox.test(A_sub$POST.TEST , A_sub$PRE.TEST , paired = T , alternative
+ = "greater")   
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val[i] = rank.test1$p.value 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+z <- data.frame(name,p_val)   
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(z) <- c(
+\begin_inset Quotes eld
+\end_inset
+
+Subjects
+\begin_inset Quotes erd
+\end_inset
+
+,
+\begin_inset Quotes erd
+\end_inset
+
+p-values
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+z
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence for every subject the p-value given by the test is less than 
+\begin_inset Formula $\alpha=0.05$
+\end_inset
+
+ hence for every subject or discipline, the POST.TEST scores are significantly
+ high compared to PRE.TEST scores.
+ 
+\end_layout
+
+\begin_layout Section*
+Conclusion
+\end_layout
+
+\begin_layout Standard
+On the basis of confirmatory and exploratory analysis done on the data ,
+ it can be said that the 
+\series bold
+awareness programme significantly improved the overall result of the students
+\series default
+ by both 
+\series bold
+increasing their average marks
+\series default
+ and 
+\series bold
+decreasing the variance of test scores (increased consistency)
+\series default
+.
+ Secondly, among different subject specializations , 
+\series bold
+students of biological sciences 
+\series default
+(especially 
+\series bold
+Microbiology specialization
+\series default
+ and 
+\series bold
+zoology
+\series default
+ students) 
+\series bold
+did better than others
+\series default
+ in both the tests.
+ This is quite obvious as they learn about these diseases in their curriculum.
+ Whereas chemistry students did highest improvement among all.
+ Between years Microbiology students of Bachelor level scored less than
+ those with specialization in the subject which is quite obvious due to
+ a higher level of awareness amongst them.
+ But after the awareness programme, both Bsc and Msc students scored almost
+ same which indicates the effectiveness of the material.
+\end_layout
+
+\begin_layout Subsection*
+Discussion
+\end_layout
+
+\begin_layout Standard
+This study clearly indicates that students of 
+\series bold
+non-biological streams are less aware
+\series default
+ than Students of Biological Sciences.
+ This may be due to the fact that majority of this things are included in
+ the curriculum of some biological streams.
+ 
+\series bold
+So more emphasis should be given to the rest part
+\series default
+ i.e those with non-biological streams even for students from Arts and other
+ disciplines etc.
+ Organizations conducting such awareness programmes should focus more on
+ the segment who are ignorant about the facts regarding HIV/AIDS.
+ However on the light of the given data we can say that the
+\series bold
+ overall performance of Botany students was quite dissatisfactory 
+\series default
+this may be a wrong conclusion due to small sample size, so it's recommended
+ to look upon any specific reason behind this.
+\end_layout
+
+\begin_layout Section*
+Appendix
+\end_layout
+
+\begin_layout Subsection*
+R Codes
+\end_layout
+
+\begin_layout Standard
+Reading the data frame :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+A <- read.table("C:
+\backslash
+
+\backslash
+Users
+\backslash
+
+\backslash
+Sukanta
+\backslash
+
+\backslash
+Desktop
+\backslash
+
+\backslash
+SEE_Project
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+AIDS_final.dat", header = T , sep = "
+\backslash
+t") 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mean values for both tests :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+mean(A$PRE.TEST)
+\end_layout
+
+\begin_layout Plain Layout
+
+mean(A$POST.TEST)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Subjectwise mean values :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+name <- unique(A$Subjects) #_Distinct Subjects
+\end_layout
+
+\begin_layout Plain Layout
+
+means <- matrix(rep(0,length(name)*2),ncol = 2) #_A matrix to store the
+ values
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:length(name)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+{   
+\end_layout
+
+\begin_layout Plain Layout
+
+	means[i,1] <- mean(subset(A , Subjects %in% name[i])$PRE.TEST)   
+\end_layout
+
+\begin_layout Plain Layout
+
+	means[i,2] <- mean(subset(A , Subjects %in% name[i])$POST.TEST) 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+#_forming the data frame to store corresponding values_
+\end_layout
+
+\begin_layout Plain Layout
+
+groups <- data.frame(name , means , means[,2]-means[,1]) 
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(groups) <- c("Subjects","PRE_mean","POST_mean","Diff") 
+\end_layout
+
+\begin_layout Plain Layout
+
+groups 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Subjectwise variances :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+var_s <- matrix(rep(0,length(name)*2),ncol = 2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:length(name)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+{   
+\end_layout
+
+\begin_layout Plain Layout
+
+	var_s[i,1] <- var(subset(A , Subjects %in% name[i])$PRE.TEST)  
+\end_layout
+
+\begin_layout Plain Layout
+
+	var_s[i,2] <- var(subset(A , Subjects %in% name[i])$POST.TEST) 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+groups_var <- data.frame(name , var_s) 
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(groups_var) <- c("Subjects","PRE_var","POST_var")
+\end_layout
+
+\begin_layout Plain Layout
+
+groups_var 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 1 :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+library(ggplot2)
+\end_layout
+
+\begin_layout Plain Layout
+
+library(ggpubr)
+\end_layout
+
+\begin_layout Plain Layout
+
+library(magrittr)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(A ,aes(PRE.TEST,POST.TEST, color = Subjects)) +
+\end_layout
+
+\begin_layout Plain Layout
+
+	   geom_point() + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		facet_wrap(~Subjects) + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		 scale_color_grey(start=0.2,end=0.6) + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		  theme_bw() 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Correlation between PRE.TEST and POST.TEST scores for different Subjects :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+cor(A$PRE.TEST,A$POST.TEST)
+\end_layout
+
+\begin_layout Plain Layout
+
+corr_s <- matrix(rep(0,length(name)),ncol = 1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:length(name))
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+#_Subjectwise correlation
+\end_layout
+
+\begin_layout Plain Layout
+
+   corr_s[i,1] <- cor(subset(A , Subjects %in% name[i])
+\end_layout
+
+\begin_layout Plain Layout
+
+    $PRE.TEST,subset(A , Subjects %in% name[i])$POST.TEST)
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+groups_corr <- data.frame(name , corr_s) 
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(groups_corr) <- c("Subjects","Correlation") 
+\end_layout
+
+\begin_layout Plain Layout
+
+groups_corr
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 2 :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#_The data.frame is reshaped with combining both PRE.TEST and
+\end_layout
+
+\begin_layout Plain Layout
+
+#_POST.TEST scores and adding an extra column with two factor
+\end_layout
+
+\begin_layout Plain Layout
+
+#_variables 
+\begin_inset Quotes eld
+\end_inset
+
+PRE
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+POST
+\begin_inset Quotes erd
+\end_inset
+
+_
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+A1 <- A[-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+A2 <- A[-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(A1)[4] <- "Score" 
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(A2)[4] <- "Score" 
+\end_layout
+
+\begin_layout Plain Layout
+
+AIDS1 <- rbind(A1,A2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+#_The Factor variables are stored in 
+\begin_inset Quotes eld
+\end_inset
+
+Indicator
+\begin_inset Quotes erd
+\end_inset
+
+ column_
+\end_layout
+
+\begin_layout Plain Layout
+
+Indicator <- c(rep("PRE",72),rep("POST",72))
+\end_layout
+
+\begin_layout Plain Layout
+
+AIDS <- cbind(AIDS1,Indicator) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#_the factors are ordered as 
+\begin_inset Quotes eld
+\end_inset
+
+PRE
+\begin_inset Quotes erd
+\end_inset
+
+,
+\begin_inset Quotes erd
+\end_inset
+
+POST
+\begin_inset Quotes erd
+\end_inset
+
+_
+\end_layout
+
+\begin_layout Plain Layout
+
+AIDS$Indicator <- factor(AIDS$Indicator , levels = c("PRE","POST"))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#_the Subjects are ordered accordingly_
+\end_layout
+
+\begin_layout Plain Layout
+
+AIDS$Subjects <- factor(AIDS$Subjects , levels=     				               
+    c("Chemistry","Botany","Micro_Bsc","Micro SP",
+\end_layout
+
+\begin_layout Plain Layout
+
+				   "Zoology"))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#_The boxplots for PRE.TEST and POST.TEST scores are drawn on Y axis 
+\end_layout
+
+\begin_layout Plain Layout
+
+#_containing Scores_
+\end_layout
+
+\begin_layout Plain Layout
+
+plot1 <- ggboxplot(AIDS , x = "Indicator" , y = "Score") +
+\end_layout
+
+\begin_layout Plain Layout
+
+		  theme_bw()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#_The Jittered plots along with mean sq.error for PRE.TEST and 
+\end_layout
+
+\begin_layout Plain Layout
+
+#_POST.TEST scores are drawn on Y axis containing Scores_
+\end_layout
+
+\begin_layout Plain Layout
+
+plot2 <- ggline(AIDS, x = "Indicator", y = "Score" , add = 
+\end_layout
+
+\begin_layout Plain Layout
+
+c("mean_se","jitter")) + 
+\end_layout
+
+\begin_layout Plain Layout
+
+theme_bw() 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ggarrange(plot1 , plot2 , ncol = 2 , nrow = 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Testwise Boxplots for each Subject :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+#_Here the boxplot has been drawn w.r.t two factors namely the 
+\end_layout
+
+\begin_layout Plain Layout
+
+#_Subjects and 
+\begin_inset Quotes eld
+\end_inset
+
+PRE
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes erd
+\end_inset
+
+POST
+\begin_inset Quotes erd
+\end_inset
+
+_
+\end_layout
+
+\begin_layout Plain Layout
+
+ggboxplot(AIDS , x = "Subjects", y = "Score", color = 
+\begin_inset Quotes eld
+\end_inset
+
+Indicator
+\begin_inset Quotes erd
+\end_inset
+
+) +
+\end_layout
+
+\begin_layout Plain Layout
+
+ theme_bw() 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Testwise Jittered Plots for each Subject :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+#_Here the Jitter Plot has been drawn w.r.t two factors namely the 
+\end_layout
+
+\begin_layout Plain Layout
+
+#_Subjects and 
+\begin_inset Quotes eld
+\end_inset
+
+PRE
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes erd
+\end_inset
+
+POST
+\begin_inset Quotes erd
+\end_inset
+
+_
+\end_layout
+
+\begin_layout Plain Layout
+
+ggline(AIDS, x = "Subjects", y = "Score", color = 
+\begin_inset Quotes eld
+\end_inset
+
+Indicator
+\begin_inset Quotes erd
+\end_inset
+
+, add =
+\end_layout
+
+\begin_layout Plain Layout
+
+c("mean_se","jitter")) + 
+\end_layout
+
+\begin_layout Plain Layout
+
+ theme_bw() 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ridgeline Plot for both Scores :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+library(ggridges)
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(AIDS, aes(x = Score, y = Indicator, fill = Indicator)) +
+\end_layout
+
+\begin_layout Plain Layout
+
+		geom_density_ridges() +    
+\end_layout
+
+\begin_layout Plain Layout
+
+		 theme_ridges() +
+\end_layout
+
+\begin_layout Plain Layout
+
+          theme(legend.position = "none") + 
+\end_layout
+
+\begin_layout Plain Layout
+
+           scale_fill_grey(start = 0.2 , end= 0.7)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ridgeline Plots for both Scores, subjectwise :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+library(ggridges)
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(AIDS, aes(x = Score, y = Indicator, fill = Indicator)) +
+\end_layout
+
+\begin_layout Plain Layout
+
+ geom_density_ridges() +     
+\end_layout
+
+\begin_layout Plain Layout
+
+  theme_ridges() +      
+\end_layout
+
+\begin_layout Plain Layout
+
+   theme(legend.position = "none") + 
+\end_layout
+
+\begin_layout Plain Layout
+
+    scale_fill_grey(start = 0.2 , end = 0.7)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+QQplot and Histograms for checking normality assumptions for both test scores
+ :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+diff <- A$POST.TEST-A$PRE.TEST 
+\end_layout
+
+\begin_layout Plain Layout
+
+#_By subtracting PRE.TEST scores from POST.TEST , we get the 
+\end_layout
+
+\begin_layout Plain Layout
+
+#_increase(or decrease) in the scores for each individual 
+\end_layout
+
+\begin_layout Plain Layout
+
+AI <- data.frame(A[,-c(4,5)] , diff)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+qp <- ggplot(AIDS , aes(sample = Score)) + 
+\end_layout
+
+\begin_layout Plain Layout
+
+	   stat_qq() + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		stat_qq_line() + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		 facet_wrap(~Indicator) + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		  theme_bw() 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+hg <- ggplot(AIDS , aes(Score)) +
+\end_layout
+
+\begin_layout Plain Layout
+
+	   geom_histogram()+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+		facet_wrap(~Indicator) + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		 theme_bw()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+qq_diff <- ggplot(AI , aes(sample = diff)) +  
+\end_layout
+
+\begin_layout Plain Layout
+
+			stat_qq() + 
+\end_layout
+
+\begin_layout Plain Layout
+
+			 stat_qq_line() +
+\end_layout
+
+\begin_layout Plain Layout
+
+			  theme_bw() 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+hg_diff <- ggplot(AI , aes(diff)) +   
+\end_layout
+
+\begin_layout Plain Layout
+
+			geom_histogram() +  
+\end_layout
+
+\begin_layout Plain Layout
+
+			 theme_bw()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ggarrange(qp , hg , qq_diff , hg_diff , ncol = 2 , nrow = 2)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Testing Homoskedasticity for PRE.TEST and POST.TEST Scores :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+vtest1 = var.test(A$PRE.TEST , A$POST.TEST , ratio = 1 , alternative
+\end_layout
+
+\begin_layout Plain Layout
+
+		 = "greater")
+\end_layout
+
+\begin_layout Plain Layout
+
+vtest1
+\end_layout
+
+\begin_layout Plain Layout
+
+vtest1$p.value
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Testing if the mean values of both tests are equal or not :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+ttest1 = t.test(A$POST.TEST , A$PRE.TEST , alternative = "greater" ,
+\end_layout
+
+\begin_layout Plain Layout
+
+		  paired = T)
+\end_layout
+
+\begin_layout Plain Layout
+
+ttest1
+\end_layout
+
+\begin_layout Plain Layout
+
+ttest1$p.value
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Checking if Mean PRE.TEST and POST.TEST scores are equal :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val <- matrix(rep(0,length(name)),ncol = 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:length(name)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+{  
+\end_layout
+
+\begin_layout Plain Layout
+
+test = t.test(subset(A , Subjects %in% name[i])$POST.TEST , 
+\end_layout
+
+\begin_layout Plain Layout
+
+subset(A , Subjects %in% name[i])$PRE.TEST , 
+\end_layout
+
+\begin_layout Plain Layout
+
+alternative = "greater" , paired =T) 
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val[i,1] <- test$p.value
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val <- data.frame(name , p_val) 
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(p_val) <- c("Subjects","p-values") 
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Checking Subjectwise Homoskedasticity :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val <- matrix(rep(0,length(name)),ncol = 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:length(name)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+{  
+\end_layout
+
+\begin_layout Plain Layout
+
+test = var.test(subset(A , Subjects %in% name[i])$POST.TEST
+\end_layout
+
+\begin_layout Plain Layout
+
+, subset(A , Subjects %in% name[i])$PRE.TEST
+\end_layout
+
+\begin_layout Plain Layout
+
+,alternative = "less",conf.level = 0.99) 
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val[i,1] <- test$p.value
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val <- data.frame(name , p_val) 
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(p_val) <- c("Subjects","p-values") 
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pairwise t-test to check Subjectwise mean differences of both scores :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+pair.test <- pairwise.t.test(AI$diff, AI$Subjects
+\end_layout
+
+\begin_layout Plain Layout
+
+, pool.sd = FALSE)
+\end_layout
+
+\begin_layout Plain Layout
+
+pair.test$p.value  
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Signed rank test to check whether the two test scores have same mean or
+ not :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+rank.test <- wilcox.test(A$POST.TEST , A$PRE.TEST , paired = T , 			   alternative
+ = "greater") 
+\end_layout
+
+\begin_layout Plain Layout
+
+rank.test   
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Subjectwise signed rank test :-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+p_val <- vector(length = length(name))
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:length(name)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+{  
+\end_layout
+
+\begin_layout Plain Layout
+
+	A_sub = subset(A , Subjects %in% name[i])   
+\end_layout
+
+\begin_layout Plain Layout
+
+	rank.test1 = wilcox.test(A_sub$POST.TEST , A_sub$PRE.TEST
+\end_layout
+
+\begin_layout Plain Layout
+
+		, paired = T , alternative = "greater")   
+\end_layout
+
+\begin_layout Plain Layout
+
+	p_val[i] = rank.test1$p.value 
+\end_layout
+
+\begin_layout Plain Layout
+
+#_p-values stored in the vector 
+\end_layout
+
+\begin_layout Plain Layout
+
+#_p_val
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+z <- data.frame(name,p_val)   
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(z) <- c(
+\begin_inset Quotes eld
+\end_inset
+
+Subjects
+\begin_inset Quotes erd
+\end_inset
+
+,
+\begin_inset Quotes erd
+\end_inset
+
+p-values
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+z
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+References
+\end_layout
+
+\begin_layout Standard
+The following books were used as a reference to the analysis done in the
+ report :-
+\end_layout
+
+\begin_layout Itemize
+Fundamentals of Statistics, Goon A.M., Gupta M.K., Dasgupta B.
+\end_layout
+
+\begin_layout Itemize
+Extending the Linear Model with R, Faraway Julian J.
+\end_layout
+
+\begin_layout Itemize
+ggplot2: Elegant Graphics for Data Analysis, Wickham Hadley.
+\end_layout
+
+\begin_layout Itemize
+STHDA.
+ [Online].
+ Available from: 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.sthda.com/english/wiki/one-way-anova-test-in-r"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The Grammar of Graphics, Leland Wilkinson, D.
+ Wills, D.
+ Rope, A.
+ Norton, R.
+ Dubbs.
+\end_layout
+
+\begin_layout Itemize
+Wikipedia [Online].
+ Available from: 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/Wilcoxon_signed-rank_test"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Acknowledgment
+\end_layout
+
+\begin_layout Standard
+I would like to express my sincere gratitude to my respected instructor
+ 
+\series bold
+Prof.Atanu Ghosh
+\series default
+ for their guidance and constant supervision as well as for providing all
+ the necessary information regarding the project & also for their support
+ in completing this project.
+\end_layout
+
+\end_body
+\end_document
